@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create New Record</h1>  
+    <h2> Hello world </h2>  
+    <hr/> 
+    <form method = "POST" > 
+
+        {% csrf_token %}
+    Name : <input type = "text"  placeholder = "Enter  Your message  Name" name = "Name"  required ><br/> 
+    Email : <input type = "text"  placeholder = "Enter Email " name = "Email" required ><br/> 
+    Message : <input type = "text"  placeholder = "Enter message " name = "Message" required ><br/> 
+     
+    <input type = "submit"  value = "Insert Record" /> 
+
+    {% if  messages %} 
+    {% for message in messages %}
+
+    <h2 style = "color : green ; ">{{message}}</h2> 
+
+
+
+    {% endfor%}
+
+    {% endif %}
+
+
+    </form> 
+
+    <hr/>
+
+</body>
+</html>
